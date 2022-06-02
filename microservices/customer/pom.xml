@@ -16,11 +16,24 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-    <!-- imports from parent pom import of all spring-boot-dependencies -->
+    <!-- imports from parent pom's import of all spring-boot-dependencies -->
+    <!-- the icon on the left shows the importing from the parent pom -->
     <dependencies>
         <dependency>
+            <!-- for RESTful API's -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <!-- to perform queries and interact with the database -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <!-- the postgres driver -->
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
