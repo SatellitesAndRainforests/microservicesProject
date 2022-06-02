@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.markstart</groupId>
+  <artifactId>microservices</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+  <!-- list of submodules -->
+  <modules>
+    <module>customer</module>
+  </modules>
+
+  <name>microservices</name>
+  <!-- FIXME change it to the project's website -->
+  <url>https://127.0.0.1</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <spring.boot.maven.plugin.version>2.5.7</spring.boot.maven.plugin.version>
+    <spring.boot.dependecies.version>2.5.7</spring.boot.dependecies.version>
+  </properties>
+
+  <!-- parent module dependencies -->
+  <!-- submodules can select their own dependencies -->
+  <!-- imports all spring-boot-dependencies -->
+  <!-- submodules can select what they want to use -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring.boot.dependecies.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <!-- every submodule will have these dependencies by default -->
+  <!-- without defining them in their own pom's  -->
+  <dependencies>
+    <dependency>
+      <!-- java library, helps to ignore generating boilerplate code, making code quicker and more concise -->
+      <!-- we can use lombok annotations to write objects -->
+      <!-- generates getters,setters,toString (boilerplate) -->
+      <!-- (boilerplate) methods dont appear but are avaiable from User.class -->
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.24</version>
+    </dependency>
+    <dependency>
+      <!-- springboot testing artifact -->
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>2.5.2</version>
+    </dependency>
+  </dependencies>
+
+  <!-- plugins to build the artifacts -->
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring.boot.maven.plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>
