@@ -13,6 +13,7 @@ public record CustomerController(CustomerService customerService) {
 
     @PostMapping
     public void registerCustomer(@RequestBody CustomerRegistrationRequest customerRegistrationRequest) {
+        //adding to the log means we dont have to check the database as often.
         log.info("new customer registration {}", customerRegistrationRequest);
         customerService.registerCustomer(customerRegistrationRequest);
 

@@ -12,6 +12,7 @@
   <!-- list of submodules -->
   <modules>
     <module>customer</module>
+    <module>fraud</module>
   </modules>
 
   <name>microservices</name>
