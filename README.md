@@ -1,8 +1,8 @@
 # microservicesProject
 
-Java 17 - records
-Java Lombok - @Anotations for less boilerplate object code (constructors, getters, setters ...)
-Maven multimodule - parent and inheriting child Poms (submodules can choose which dependiencs to import or force dependencies to all submodules)
++ Java 17 - records
++ Java Lombok - @Anotations for less boilerplate object code (constructors, getters, setters ...)
++ Maven multimodule - parent and inheriting child Poms (submodules can choose which dependiencs to import or force dependencies to all submodules)
 
 ------------------------------------------------------------
 
