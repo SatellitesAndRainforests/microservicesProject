@@ -3,6 +3,7 @@
 + Java 17 - records
 + Java Lombok - @Anotations for less boilerplate object code (constructors, getters, setters ...)
 + Maven multimodule - parent and inheriting child Poms (submodules can choose which dependiencs to import or force dependencies to all submodules)
++ Eureka (clients/Server) service discovery, manages microservice's ip:port addresses.
 
 ------------------------------------------------------------
 
@@ -25,7 +26,17 @@ Distruting tracing (tracks a requests journey), can be used to identify botlenec
 
 typically 1 database per microservice
 
++ service discovery: Auto detection of devices and services on a network.
++ Eureka Server: has Eureka clients that {register, lookup, connect}, the server knows all the client's ip:port info.
+the server is a bottleneck and a single point of failure.
+ip:port info shouldn't be manged within the application, instead use 'service discovery'.
+if a microservice gets too busy a second instance can be launched.
+
+
 ------------------------------------------------------------
+
+
+
 
 in the directory with the docker-compose.yml file:
 $ docker-compose up -d        //detach, to start the docker compose container network

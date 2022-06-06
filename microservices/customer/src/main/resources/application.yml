@@ -1,14 +1,18 @@
 #one way to configure a spring application.
 #banner font is smslant
+
 server:
   port: 8080
+
 spring:
   application:
     name: customer
+
   datasource:
     password: password
     url: jdbc:postgresql://localhost:5432/customer
     username: mark
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -17,3 +21,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+
+eureka:
+  client:
+    server-url:
+      defaultZone: http://localhost:8761/eureka
+
