@@ -1,9 +1,11 @@
 # microservicesProject
 
-+ Java 17 - records
++ Java 17
++ Java records - immutable data class, private final fields, with getters.
 + Java Lombok - @Anotations for less boilerplate object code (constructors, getters, setters ...)
 + Maven multimodule - parent and inheriting child Poms (submodules can choose which dependiencs to import or force dependencies to all submodules)
 + Eureka (clients/Server) service discovery, manages microservice's ip:port addresses.
++ Load Banacers - (external) coordinate connections to instances of a server, (internal) messages between instances of services. typically managed by cloud service provider.
 
 ------------------------------------------------------------
 
@@ -32,6 +34,11 @@ the server is a bottleneck and a single point of failure.
 ip:port info shouldn't be manged within the application, instead use 'service discovery'.
 if a microservice gets too busy a second instance can be launched.
 
++ Load Balancers: (external from the private network) the main entry point, single point of failure, for production typically managed by a cloud service provider. (Aws, elastic, google cloud).
+load balances for each set of instances of a microservice within the private network. 
+external load balancers hava a selctable algorithm for which instance to send trafic to, (eg. round robin (1,2,1,2)).
+health checkes - services return (status-code: 200) to the loadbalancer if OK.
+
 
 ------------------------------------------------------------
 
@@ -51,4 +58,4 @@ interactive shell login docker container:
 
 
 -----------------------------------------------------------
-change url in pom
+change url in pom 
